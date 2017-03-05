@@ -69,8 +69,8 @@ export default combineReducers({
 })
 ```
 
-Second, you must add required event handlers to keep the responsive state up to date. `redux-responsive` uses 
-[MediaQueryList](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList)s to efficiently update the 
+Second, you must add required event handlers to keep the responsive state up to date. `redux-responsive` uses
+[MediaQueryList](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList)s to efficiently update the
 store only when required. To do this, use the provided store enhancer.
 
 ```js
@@ -201,9 +201,9 @@ export default combineReducers({
 ## Adding custom/computed fields to the responsive state
 In some cases, you may want to add computed fields to the responsive state. For example,
 an application may frequently need to know when the browser is `greaterThanOrEqual` to
-a particular breakpoint. In order to support this, `redux-responsive` lets you pass a 
-function and to `createResponsiveStateReducer` arguments as the `extraFields` key. 
-This function will recieve an object with the responsive state and returns an object
+a particular breakpoint. In order to support this, `redux-responsive` lets you pass a
+function to the `createResponsiveStateReducer` configuration object as the `extraFields` key.
+This function receives an object with the responsive state and returns an object
 with the new keys to be injected into the state whenever it is recalculated:
 
 ```es6
@@ -227,7 +227,7 @@ export default combineReducers({
 ```
 
 ### Tracking window attributes
-In some cases, you may want to have a `window` attributes tracked in your responsive state (for example, `width`). 
+In some cases, you may want to have a `window` attributes tracked in your responsive state (for example, `width`).
 To accomplish this, the first step is to add the custom field as described above.
 
 ```es6
@@ -247,7 +247,7 @@ export default combineReducers({
 ```
 
 
-When doing this, keep in mind that the responsive state enhancer only causes the 
+When doing this, keep in mind that the responsive state enhancer only causes the
 responsive state to be recalculated when the browser actually transitions between
 states. **It does not recalculate on every resize**. Therefore, you might also need
 to add an event handler that recalculates the state at another time:
